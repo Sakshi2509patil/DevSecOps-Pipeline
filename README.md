@@ -8,13 +8,11 @@
 
 ###### Deployment Steps
 
-### Step 1: Connect to EC2 Instance (Ubuntu 22.04)
+### Step 1: Connect to EC2 Instance (Ubuntu)
 
 You can connect to your EC2 instance using one of the following methods:
 
-**Option 1: EC2 Instance Connect (Browser-Based)**
-
-AWS provides **EC2 Instance Connect**, which lets you connect directly from your browser without using SSH keys.
+**Option 1: EC2 Instance Connect **
 
 **Steps:**
 
