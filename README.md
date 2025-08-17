@@ -88,8 +88,8 @@ trivy image <image_id_or_name>
 ```
 #### 2.Integrate SonarQube and Configure:
 
-Integrate SonarQube with your CI/CD pipeline.
-Configure SonarQube to analyze code for quality and security issues.
+1. Integrate SonarQube with your CI/CD pipeline.
+2. Configure SonarQube to analyze code for quality and security issues.
 
 
 
