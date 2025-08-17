@@ -8,7 +8,11 @@
 
 ###### Deployment Steps
 
-#### Option 1: EC2 Instance Connect 
+### Step 1: Connect to EC2 Instance (Ubuntu 22.04)
+
+You can connect to your EC2 instance using one of the following methods:
+
+**Option 1: EC2 Instance Connect (Browser-Based)**
 
 AWS provides **EC2 Instance Connect**, which lets you connect directly from your browser without using SSH keys.
 
@@ -29,36 +33,36 @@ sudo apt-get update -y
 git clone https://github.com/Sakshi2509patil/DevSecOps-Pipeline.git
 cd DevSecOps-Pipeline
 
-Step 3: Install Docker and Run the Application in a Container
-3.1 Install Docker
+exit
 
-Update packages, install Docker, add your user to the Docker group, and set permissions:
+### Step 1: Connect to EC2 Instance (Ubuntu 22.04)
 
-sudo apt-get install docker.io -y
-sudo usermod -aG docker $USER
-newgrp docker
-sudo chmod 777 /var/run/docker.sock
+You can connect to your EC2 instance using one of the following methods:
 
-3.2 Build the Docker Image
+**Option 1: EC2 Instance Connect (Browser-Based)**
 
-Build the Docker image for MelodyZone:
+AWS provides **EC2 Instance Connect**, which lets you connect directly from your browser without using SSH keys.
 
-docker build -t melodyzone .
+**Steps:**
 
-3.3 Run the Docker Container
+1. Go to your EC2 instance in the **AWS Management Console**.  
+2. Select your instance → Click **Connect** → Choose **EC2 Instance Connect**.  
+3. Click **Connect**. A terminal opens in your browser.
 
-Run the container and map port 8081 to 80:
+---
 
-docker run -d --name melodyzone -p 8081:80 melodyzone:latest
+### Step 2: Clone the Repository
 
-3.4 Stop & Remove Container/Image (Optional)
+Update the system packages and clone the project repository:
 
-To stop the container:
+```bash
+sudo apt-get update -y
+git clone https://github.com/Sakshi2509patil/DevSecOps-Pipeline.git
+cd DevSecOps-Pipeline
 
-docker stop <container_id>
+exit
 
 
-To remove the Docker image:
 
-docker rmi -f melodyzone
+
 
