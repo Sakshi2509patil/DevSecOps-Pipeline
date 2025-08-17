@@ -22,7 +22,6 @@ AWS provides **EC2 Instance Connect**, which lets you connect directly from your
 2. Select your instance → Click **Connect** → Choose **EC2 Instance Connect**.  
 3. Click **Connect**. A terminal opens in your browser.
 
----
 
 ### Step 2: Clone the Repository
 
@@ -47,6 +46,53 @@ sudo usermod -aG docker $USER
 newgrp docker
 sudo chmod 777 /var/run/docker.sock
 ```
+---
+
+### Phase 2: Security
+
+### Install SonarQube and Trivy:
+
+#### 4.1 Install SonarQube
+
+Run SonarQube in Docker:
+
+```bash
+docker run -d --name sonar -p 9000:9000 sonarqube:lts-community
+```
+
+Access the UI:
+
+```bash
+http://<publicIP>:9000
+# Default credentials: admin / admin
+```
+
+#### 4.2 Install Trivy (Vulnerability Scanner)
+
+```bash
+sudo apt-get install -y wget apt-transport-https gnupg lsb-release
+wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo apt-key add -
+echo "deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/trivy.list
+sudo apt-get update
+sudo apt-get install -y trivy
+```
+
+#### 4.3 Scan Images with Trivy
+
+Scan a Docker image:
+
+```bash
+trivy image <image_id_or_name>
+# example:
+# trivy image melodyzone:latest
+```
+#### 2.Integrate SonarQube and Configure:
+
+Integrate SonarQube with your CI/CD pipeline.
+Configure SonarQube to analyze code for quality and security issues.
+
+
+
 
 
 
