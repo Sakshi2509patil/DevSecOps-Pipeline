@@ -1,2 +1,3 @@
-![](../assets/flow.png)
+![](src/assets/flow.png)
+
 
