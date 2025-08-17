@@ -12,8 +12,6 @@
 
 You can connect to your EC2 instance using one of the following methods:
 
-**Option 1: EC2 Instance Connect **
-
 **Steps:**
 
 1. Go to your EC2 instance in the **AWS Management Console**.  
